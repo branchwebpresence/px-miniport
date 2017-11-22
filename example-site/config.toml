@@ -1,0 +1,106 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "px-miniport"
+copyright = "&copy; Untitled. All rights reserved."
+
+[[menu.main]]
+  name = "Top"
+  url = "#top"
+  weight = 10
+
+[[menu.main]]
+  name = "Work"
+  url = "#work"
+  weight = 20
+
+[[menu.main]]
+  name = "Portfolio"
+  url = "#portfolio"
+  weight = 30
+
+[[menu.main]]
+  name = "Contact"
+  url = "#contact"
+  weight = 40
+
+[[params.social.icon]]
+  url = "#"
+  icon = "twitter"
+  name = "Twitter"
+
+[[params.social.icon]]
+  url = "#"
+  icon = "facebook"
+  name = "Facebook"
+
+[[params.social.icon]]
+  url = "#"
+  icon = "dribbble"
+  name = "Dribbble"
+
+[[params.social.icon]]
+  url = "#"
+  icon = "linkedin"
+  name = "LinkedIn"
+
+[[params.social.icon]]
+  url = "#" 
+  icon = "tumblr"
+  name = "Tumblr"
+
+[[params.social.icon]]
+  url = "#"
+  icon = "google-plus"
+  name = "Google+"
+
+[[params.social.icon]]
+  url = "#"
+  icon = "github"
+  name = "Github"
+
+#[[params.social.icon]]
+#  url = "#"
+#  icon = "rss"
+#  name = "RSS"
+#
+#[[params.social.icon]]
+#  url = "#"
+#  icon = "instagram"
+#  name = "Instagram"
+#
+#[[params.social.icon]]
+#  url = "#"
+#  icon = "foursquare"
+#  name = "Foursquare"
+#
+#[[params.social.icon]]
+#  url = "#" 
+#  icon = "skype"
+#  name = "Skype"
+#
+#[[params.social.icon]]
+#  url = "#" 
+#  icon = "soundcloud"
+#  name = "Soundcloud"
+#
+#[[params.social.icon]]
+#  url = "#" 
+#  icon = "youtube"
+#  name = "YouTube"
+#
+#[[params.social.icon]]
+#  url ="#" 
+#  icon = "blogger"
+#  name = "Blogger"
+#
+#[[params.social.icon]]
+#  url = "#" 
+#  icon = "flickr"
+#  name = "Flickr"
+#
+#[[params.social.icon]]
+#  url ="#"
+#  icon = "vimeo"
+#  name = "Vimeo"
+#	
