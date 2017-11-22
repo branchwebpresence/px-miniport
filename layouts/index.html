@@ -1,0 +1,91 @@
+{{ partial "header.html" . }}
+
+{{ with .Params.header }}
+		<!-- {{ .name }} -->
+			<div class="wrapper style{{ .style }}{{ with .first }} first{{ end }}">
+				<article class="container" id="{{ .id }}">
+					<div class="row">
+						<div class="4u 12u(mobile)">
+							<span class="image fit"><img src="{{ .image.path | relURL }}" alt="{{ .image.description }}" /></span>
+            </div>
+						<div class="8u 12u(mobile)">
+							<header>
+								<h1>{{ .title | markdownify }}</h1>
+              </header>
+              <p>{{ .description | markdownify }}</p>
+              {{ with .button }}<a href="{{ .url }}" class="button big scrolly">{{ .text | markdownify }}</a>{{ end }}
+						</div>
+          </div>
+				</article>
+      </div>
+{{ end }}
+
+{{ range .Params.sections }}
+		<!-- {{ .name }} -->
+			<div class="wrapper style{{ .style }}">
+				<article id="{{ .id }}">
+        {{ with .header }}
+					<header>
+						<h2>{{ .title | markdownify }}</h2>
+						<p>{{ .description | markdownify }}</p>
+          </header>
+        {{ end }}
+					<div class="container">
+						<div class="row">
+            {{ range .boxes }}
+							<div class="4u 12u(mobile)">
+              {{ if eq 1 .style }}
+								<section class="box style1">
+									<span class="icon featured fa-{{ .icon }}"></span>
+									<h3>{{ .title | markdownify }}</h3>
+									<p>{{ .description | markdownify }}</p>
+                </section>
+              {{ else if eq 2 .style }}
+								<article class="box style2">
+									<a href="{{ .url }}" class="image featured"><img src="{{ .image.path | relURL }}" alt="{{ .image.description }}" /></a>
+									<h3><a href="{{ .url }}">{{ .title | markdownify }}</a></h3>
+									<p>{{ .description | markdownify }}</p>
+								</article>
+              {{ end }}
+							</div>
+            {{ end }}
+						</div>
+          </div>
+        {{ with .footer }}
+					<footer>
+						<p>{{ .description | markdownify }}</p>
+						{{ with .button }}<a href="{{ .url }}" class="button big scrolly">{{ .text }}</a>{{ end }}
+          </footer>
+        {{ end }}
+				</article>
+			</div>
+{{ end }}
+
+{{ with .Params.contact }}
+		<!-- {{ .name }} -->
+			<div class="wrapper style{{ .style }}">
+				<article id="{{ .id }}" class="container 75%">
+					<header>
+						<h2>{{ .header.title | markdownify }}</h2>
+						<p>{{ .header.description | markdownify }}</p>
+					</header>
+					<div>
+						<div class="row">
+							<div class="12u">
+                {{ partial "contact.html" .form }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<hr />
+								<h3>Find me on ...</h3>
+								<ul class="social">
+                   {{ range $.Site.Params.social.icon }}<li><a href="{{ .url }}" class="icon fa-{{ .icon }}"><span class="label">{{ .name }}</span></a></li>{{ end }}
+                </ul>
+								<hr />
+							</div>
+						</div>
+          </div>
+{{ end }}
+
+{{ partial "footer.html" . }}
