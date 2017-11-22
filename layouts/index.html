@@ -3,7 +3,7 @@
 {{ with .Params.header }}
 		<!-- {{ .name }} -->
 			<div class="wrapper style{{ .style }}{{ with .first }} first{{ end }}">
-				<article class="container" id="{{ .id }}">
+				<article class="container" id="top">
 					<div class="row">
 						<div class="4u 12u(mobile)">
 							<span class="image fit"><img src="{{ .image.path | relURL }}" alt="{{ .image.description }}" /></span>
@@ -64,7 +64,7 @@
 {{ with .Params.contact }}
 		<!-- {{ .name }} -->
 			<div class="wrapper style{{ .style }}">
-				<article id="{{ .id }}" class="container 75%">
+				<article id="contact" class="container 75%">
 					<header>
 						<h2>{{ .header.title | markdownify }}</h2>
 						<p>{{ .header.description | markdownify }}</p>
